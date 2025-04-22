@@ -46,6 +46,7 @@
 
 **Пример:**  
 
+![изображение](https://github.com/user-attachments/assets/e29fa064-15dd-4842-866c-ee32867b6390)
 
 
 ## Как это работает
