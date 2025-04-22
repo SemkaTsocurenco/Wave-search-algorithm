@@ -20,7 +20,7 @@ bool wave_algorithm(DMatrix<kCave>& cave, std::pair<value_type, value_type> star
 			for (auto [dr, dc] : dirs){
 				int nr = r + dr;
 				int nc = c + dc;
-				if ((cave(nr, nc)==-1)){
+				if ((cave(nr, nc)==-1) && (nr >= 0) && (nr < cave.rows)&& (nc >= 0) && (nc < cave.cols)){
 					cave(nr, nc) = cave(r, c) + 1; 
 					que.push({nr,nc});
 				}
@@ -46,21 +46,7 @@ bool wave_algorithm(DMatrix<kCave>& cave, std::pair<value_type, value_type> star
     return true;
 };
 
-// void print_path(DMatrix<kCave>& cave, const std::vector<std::pair<int, int>>& path) {
-//     for (size_t r = 0; r < cave.rows; ++r) {
-//         std::cout << std::setw(3) << r << "  ";
-//         for (size_t c = 0; c < cave.cols; ++c) {
-//             if (std::find(path.begin(), path.end(), std::make_pair((int)r, (int)c)) != path.end())
-//                 std::cout << std::setw(2) << '*';
-//             else
-//                 std::cout << std::setw(2) << (cave(r, c) ? '#' : ' ');
-//         }
-//         std::cout << "\n";
-//     }
-//     std::cout << "\n" << std::setw(5) << "";
-//     for (size_t c = 0; c < cave.cols; ++c) std::cout << std::setw(2) << c;
-//     std::cout << "\n\n";
-// }
+
 
 int main() {
     DMatrix<kCave> cave; 
